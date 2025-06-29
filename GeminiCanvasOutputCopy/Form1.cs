@@ -146,7 +146,7 @@ namespace GeminiCanvasOutputCopy
             {
                 if (file.Key.EndsWith("xml", StringComparison.OrdinalIgnoreCase) && file.Value.StartsWith("/*"))
                 {
-                    CodeFiles[file.Key] = file.Value.TrimStart("/*".ToCharArray()).TrimEnd("*/".ToCharArray()).Trim();
+                    CodeFiles[file.Key] = file.Value.TrimStart("/*".ToCharArray()).TrimEnd("\r\n".ToCharArray()).TrimEnd(' ').TrimEnd("*/".ToCharArray()).Trim();
                 }
             }
         }
